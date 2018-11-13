@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespase:理解成实现类的全路径（类名+包名） -->
+<mapper namespace="com.bjsxt.mapper.UserMapper">
+    <select id="selByUser" resultType="user">
+        select * from t_user where uname = #{uname} and password = #{password}
+    </select>
+    <insert id="insUser">
+        insert into t_user(uid,uname,password,sex,address,tel,age,birth) values(#{uid},#{uname},#{password},#{sex},#{address},#{tel},#{age},#{birth})
+    </insert>
+    <update id="updUser">
+        update t_user set uname=#{uname},age=#{age},birth=#{birth},tel=#{tel},address=#{address} where uid=#{uid}
+    </update>
+</mapper>
