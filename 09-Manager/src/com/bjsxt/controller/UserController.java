@@ -29,7 +29,7 @@ public class UserController {
 	@RequestMapping("/login")//登录
 	public String login(User user,HttpSession session) {
 		logger.debug(user + "对象从哪里来的，值得思考");
-		User u = userServiceImpl.login(user);
+		User u = userServiceImpl.login(user);////
 		if(u != null) {
 			session.setAttribute("user", u);
 			return "redirect:/main/main.jsp";
